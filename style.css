@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgba(148, 154, 154, 0.97);
+    font-family: 'Poppins', sans-serif;
+}
+
+.name {
+    text-align: center;
+    margin: 25px 10px;
+}
+
+.name h1 {
+    font-size: 40px;
+    color: rgb(245, 245, 233);
+}
+
+.container {
+    position: relative;
+    flex-direction: column;
+}
+
+.clock {
+    margin: auto;
+    position: relative;
+    width: 350px;
+    height: 350px;
+    border: 5px solid rgb(215, 212, 212);
+    background-color: rgb(24, 23, 23);
+    border-radius: 50%;
+    box-shadow: 5px 2px 37px #000000b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clock::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgb(255, 255, 255);
+    /* border: 2px solid rgba(255, 255, 255, 0.68); */
+    border-radius: 50%;
+}
+
+.clock span {
+    position: absolute;
+    inset: 6px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: large;
+    transform: rotate(calc(29.95deg * var(--i)));
+    /* 360/12 =30deg */
+
+}
+
+.clock span b {
+    opacity: 0.50;
+}
+
+.hour,
+.min,
+.sec {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hour {
+    width: 150px;
+    height: 150px;
+}
+
+.min {
+    width: 190px;
+    height: 190px;
+}
+
+.sec {
+    width: 250px;
+    height: 250px;
+}
+
+.hour::before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 70px;
+    background-color: rgb(243, 67, 67);
+    /* z-index: 10; */
+    border-radius: 6px 6px 0 0;
+    bottom: 80px;
+}
+
+.min::before {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 117px;
+    background-color: rgb(251, 241, 241);
+    /* z-index: 10; */
+    border-radius: 6px 6px 0 0;
+    bottom: 99px;
+}
+
+.sec::before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 170px;
+    background-color: rgb(212, 211, 211);
+    /* z-index: 10; */
+    border-radius: 6px 6px 0 0;
+    bottom: 100px;
+}
+
+/* Digital clock */
+.dig_clock {
+    position: relative;
+    margin: 30px auto;
+    font-size: 35px;
+    width: 300px;
+    height: 100px;
+    border: 4px solid rgba(235, 229, 229, 0.675);
+    background-color: rgb(24, 23, 23);
+    border-radius: 30px;
+    box-shadow: -2px 10px 37px #000000b8, inset 4px 5px 20px #282828, inset -5px -5px 15px #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.dig_time {
+    font-size: 30px;
+    width: 250px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: rgb(177, 172, 164);
+}
+
+.dig_date {
+    font-size: 20px;
+    font-weight: lighter;
+    color: rgb(195, 194, 194);
+}
+
+@media(max-width: 550px) {
+    .name h1 {
+        font-size: 30px;
+    }
+    .clock span{
+        font-size: medium;
+    }
+    .clock {
+        width: 250px;
+        height: 250px;
+    }
+    .hour::before {
+        width: 5px;
+        height: 50px;
+    }
+    
+    .min::before {
+        width: 2px;
+        height: 85px;
+    }
+    
+    .sec::before {
+        width: 1px;
+        height: 125px;
+    }
+    .dig_clock {
+        width: 200px;
+        height: 80px;
+    }
+
+    .dig_time {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .dig_date {
+        font-size: 14px;
+        font-weight: bold;
+    }
+}
