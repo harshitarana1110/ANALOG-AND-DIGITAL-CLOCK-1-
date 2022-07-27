@@ -7,6 +7,8 @@ setInterval(() => {
     // h_rotation = (30*hour_time) + (min_time/2);
     // m_rotation = 6*min_time;
     // s_rotation = 6*sec_time;
+    
+    document.getElementById('hide').style.display = "block";
 
     const hour = document.querySelector('.hour');
     const min = document.querySelector('.min');
@@ -37,7 +39,7 @@ setInterval(() => {
 
     // date
     Day = date.getDay();
-    Month = date.getMonth() + 1;
+    Month = date.getMonth();
     Date_num = date.getDate();
     Year = date.getFullYear();
 
